@@ -1,6 +1,10 @@
 import Link from 'next/link'
+import dayjs from 'dayjs'
 
 type CardProp = {
+  title: string
+  category?: string
+  date: Date
   size: string
 }
 
@@ -9,6 +13,8 @@ const ArticleCard: React.FC<CardProp> = props => {
     let classNames: string[] = ['articleCard']
     if (props.size == 'small') {
       classNames.push('small')
+    } else if (props.size == 'medium') {
+      classNames.push('medium')
     } else if (props.size == 'large') {
       classNames.push('large')
     }
@@ -22,7 +28,7 @@ const ArticleCard: React.FC<CardProp> = props => {
       <div className="content">
         <span className="category">お知らせ</span>
         <h3>新HPを公開しました</h3>
-        <small className="date">2020.05.09</small>
+        <small className="date">{ dayjs(props.date).format('YYYY.MM.DD') }</small>
       </div>
     </div>
   )
