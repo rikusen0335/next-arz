@@ -23,7 +23,7 @@ const ArticleCard: React.FC<CardProp> = props => {
 
   return (
     <div className={attachClass()}>
-      <Link href="/post/1"><a></a></Link>
+      <Link href="/news/hello-world"><a></a></Link>
       <div className="background-image"></div>
       <div className="content">
         <span className="category">お知らせ</span>

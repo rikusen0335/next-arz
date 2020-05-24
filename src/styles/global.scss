@@ -2,7 +2,7 @@
 @import "utils.module";
 @import "header";
 @import "sponser";
-@import "newsContainer";
+@import "news";
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
 
@@ -26,20 +26,41 @@ body {
 }
 
 .container {
-  width: 1400px;
+  width: 1280px;
   margin: 0 auto;
 }
 
 section {
-  background-color: #27292D;
+  background-color: $black;
   padding: 4rem 0;
 
   &:nth-child(even) {
-    background-color: #2D2F34;
+    background-color: $black-lighter;
   }
 }
 
 .itemTitle {
   text-align: center;
   letter-spacing: 0.05em;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.col-1 {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  margin: 0 8px 20px;
+}
+
+.col-4 {
+  display: flex;
+  justify-content: center;
+  flex: 4;
+  margin-bottom: 0 8px 20px;
 }
