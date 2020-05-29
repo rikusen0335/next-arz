@@ -1,0 +1,23 @@
+.article {
+  width: 100%;
+  
+  .title {
+    width: 100%;
+    border-bottom: 3px solid $primary;
+
+    h2 {
+      letter-spacing: 0.15rem;
+    }
+  }
+  .date p {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  img {
+    margin: 64px 0 32px;
+    width: 100%;
+    height: auto;
+  }
+}

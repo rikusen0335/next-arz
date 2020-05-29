@@ -5,6 +5,7 @@ const TwitterEmbed = () => {
     <TwitterTimelineEmbed
       sourceType="profile"
       screenName="ARZ_TEAM"
+      theme="dark"
       options={{height: 400}}
     />
   )

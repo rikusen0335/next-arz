@@ -40,11 +40,11 @@
     vertical-align: middle;
 
     &:hover {
-      border-bottom: 3px solid $primary-darker !important;
+      border-bottom: 3px solid $primary !important;
     }
 
     &.active {
-      border-bottom: 3px solid $primary;
+      border-bottom: 3px solid $primary-darker;
     }
   }
 }

@@ -12,6 +12,10 @@ h2 {
   font-weight: 800;
   letter-spacing: -0.05rem;
   margin: 0 0 2rem;
+
+  &.line-64px {
+    line-height: 64px;
+  }
 }
 
 h3 {
