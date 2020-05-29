@@ -6,13 +6,15 @@ import { getNewsList } from "~/pages/api/axios"
 import { useState, useEffect } from "react"
 
 const News = () => {
+  const [loading, setLoading] = useState(true)
   const [newsList, setNewsList] = useState([])
   useEffect(() => {
     const fetchNewsList = async () => {
       const response = await getNewsList()
 
       if (response.isSuccess === true && response) {
-        setNewsList(response.data)
+        setLoading(false)
+        setNewsList(response.data.contents)
         console.log(newsList)
       }
     }
@@ -27,6 +29,10 @@ const News = () => {
     { title: 'hoge', date: new Date('2020-05-09T03:24:00'), size: 'medium' },
     { title: '新規メンバーが参入しました', category: 'お知らせ', date: new Date('2020-05-09T03:24:00'), size: 'medium' },
   ]
+
+  if (loading) {
+    return 'Loading...'
+  }
 
   return ([
     <Header />,
