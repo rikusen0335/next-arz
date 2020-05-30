@@ -6,7 +6,7 @@ const TwitterEmbed = () => {
       sourceType="profile"
       screenName="ARZ_TEAM"
       theme="dark"
-      options={{height: 400}}
+      options={{height: 600}}
     />
   )
 }

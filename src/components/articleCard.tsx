@@ -4,7 +4,8 @@ import dayjs from 'dayjs'
 type CardProp = {
   title: string
   category?: string
-  date: Date
+  createdAt: Date
+  updatedAt?: Date
   size: string
 }
 
@@ -20,15 +21,19 @@ const ArticleCard: React.FC<CardProp> = props => {
     }
     return classNames.join(' ')
   }
+  const category = props.category ? props.category.replace(/\s/g, '').split(',') : ['カテゴリーなし']
+  const date = props.updatedAt ? props.updatedAt : props.createdAt
 
   return (
     <div className={attachClass()}>
       <Link href="/news/hello-world"><a></a></Link>
       <div className="background-image"></div>
       <div className="content">
-        <span className="category">お知らせ</span>
-        <h3>新HPを公開しました</h3>
-        <small className="date">{ dayjs(props.date).format('YYYY.MM.DD') }</small>
+        { category.map(cat => {
+          return(<span className="category">{ cat }</span>)
+        })}
+        <h3>{ props.title }</h3>
+        <small className="date">{ dayjs(date).format('YYYY.MM.DD') }</small>
       </div>
     </div>
   )

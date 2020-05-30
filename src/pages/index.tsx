@@ -43,23 +43,23 @@ const Home = () => {
     <Header />,
     <Layout home>
       <div>
-        {sponsers[0] ? (
-        <section id="sponser">
-          <div className="container">
-            <IndexTitle title="SPONSERS" />
+        {sponsers[0] && (
+          <section id="sponser">
+            <div className="container">
+              <IndexTitle title="SPONSERS" />
 
-            <Swiper {...swiperParams}>
-              { sponsers.map((data) => {
-                return (
-                  <div>
-                    <Sponser {...data} />
-                  </div>
-                )
-              }) }
-            </Swiper>
-          </div>
-        </section>
-        ): (<></>)}
+              <Swiper {...swiperParams}>
+                { sponsers.map((data) => {
+                  return (
+                    <div>
+                      <Sponser {...data} />
+                    </div>
+                  )
+                }) }
+              </Swiper>
+            </div>
+          </section>
+        )}
 
         <section id="news">
           <div className="container">

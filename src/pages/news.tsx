@@ -12,23 +12,13 @@ const News = () => {
     const fetchNewsList = async () => {
       const response = await getNewsList()
 
-      if (response.isSuccess === true && response) {
+      if (response.status === 200 && response) {
         setLoading(false)
         setNewsList(response.data.contents)
-        console.log(newsList)
       }
     }
     fetchNewsList()
   }, [])
-
-  const news = [
-    { title: '新HPを公開しました', category: 'お知らせ', date: new Date('2020-05-09T03:24:00'), size: 'medium' },
-    { title: '情報を公開しました', category: '秘密', date: new Date('2020-05-09T03:24:00'), size: 'medium' },
-    { title: '情報を公開しました', category: '秘密', date: new Date('2020-05-09T03:24:00'), size: 'medium' },
-    { title: '情報を公開しました', category: '秘密', date: new Date('2020-05-09T03:24:00'), size: 'medium' },
-    { title: 'hoge', date: new Date('2020-05-09T03:24:00'), size: 'medium' },
-    { title: '新規メンバーが参入しました', category: 'お知らせ', date: new Date('2020-05-09T03:24:00'), size: 'medium' },
-  ]
 
   if (loading) {
     return 'Loading...'
