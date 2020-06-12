@@ -8,7 +8,9 @@ import Link from 'next/link'
 import React from 'react';
 import Swiper from 'react-id-swiper';
 
-const Home = () => {
+import { getNewsList } from "~/pages/api/axios"
+
+const Home = (props) => {
   const sponsers = [
     { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
     { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
@@ -64,7 +66,7 @@ const Home = () => {
         <section id="news">
           <div className="container">
             <IndexTitle title="NEWS" />
-            <NewsContainer />
+            <NewsContainer post={props} />
             <div className="readMore">
               <Link href="/news"><a>READ MORE</a></Link>
             </div>
@@ -74,6 +76,17 @@ const Home = () => {
       </div>
     </Layout>
   ])
+}
+
+Home.getInitialProps = async () => {
+  const response = await getNewsList()
+  let post = null
+
+  if (response.status === 200 && response) {
+    post = response.data
+  }
+
+  return post
 }
 
 export default Home

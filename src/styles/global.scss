@@ -4,8 +4,9 @@
 @import "sponser";
 @import "news";
 @import "article";
+@import "content";
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700&display=swap');
 
 html,
 body {
@@ -54,6 +55,12 @@ section {
   flex-wrap: wrap;
   width: 100%;
   max-width: 1280px;
+}
+
+.col {
+  display: flex;
+  flex: 40%;
+  margin: 0 8px 20px;
 }
 
 .col-1 {

@@ -8,15 +8,16 @@
   grid-template-columns: 300px 300px 300px 300px;
   grid-template-rows: 180px 180px 180px;
   gap: 20px 20px;
-  grid-template-areas: "Art1 Art1 Art2 Art3" "Art1 Art1 Art6 Art6" "Art4 Art5 Art6 Art6";
+  grid-template-areas: "a1 a1 a2 a3" "a1 a1 a4 a4" "a5 a6 a4 a4";
 }
 
-.Art1 { grid-area: Art1; }
-.Art2 { grid-area: Art2; }
-.Art3 { grid-area: Art3; }
-.Art4 { grid-area: Art4; }
-.Art5 { grid-area: Art5; }
-.Art6 { grid-area: Art6; }
+.a1 { grid-area: a1; }
+.a2 { grid-area: a2; }
+.a3 { grid-area: a3; }
+.a4 { grid-area: a4; }
+.a5 { grid-area: a5; }
+.a6 { grid-area: a6; }
+
 
 .readMore {
   display: flex;

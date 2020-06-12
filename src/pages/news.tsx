@@ -2,27 +2,12 @@ import Layout from "~/components/layout"
 import Header from "~/components/header"
 import ArticleCard from "~/components/articleCard"
 import TwitterEmbed from "~/components/twitterEmbed"
-import { getNewsList } from "~/pages/api/axios"
+import { getFullNewsList } from "~/pages/api/axios"
 import { useState, useEffect } from "react"
 
-const News = () => {
-  const [loading, setLoading] = useState(true)
-  const [newsList, setNewsList] = useState([])
-  useEffect(() => {
-    const fetchNewsList = async () => {
-      const response = await getNewsList()
-
-      if (response.status === 200 && response) {
-        setLoading(false)
-        setNewsList(response.data.contents)
-      }
-    }
-    fetchNewsList()
-  }, [])
-
-  if (loading) {
-    return 'Loading...'
-  }
+const News = props => {
+  let newsList = props.contents
+  console.log(newsList)
 
   return ([
     <Header />,
@@ -35,7 +20,7 @@ const News = () => {
                 <div className="row">
                   { newsList.map((data, index) => {
                     return (
-                      <div className="col-1" key={index}>
+                      <div className="col" key={index}>
                         <ArticleCard {...data} />
                       </div>
                     )
@@ -53,6 +38,17 @@ const News = () => {
       )}
     </Layout>
   ])
+}
+
+News.getInitialProps = async () => {
+  const response = await getFullNewsList()
+  let post = null
+
+  if (response.status === 200 && response) {
+    post = response.data
+  }
+
+  return post
 }
 
 export default News
