@@ -5,6 +5,17 @@
     width: 100%;
     border-bottom: 3px solid $primary;
 
+    .category {
+      padding: 2px 5px;
+      margin-right: 5px;
+      color: #EEEEEE;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      background: #CE302D;
+      width: auto;
+    }
+
     h2 {
       letter-spacing: 0.15rem;
     }

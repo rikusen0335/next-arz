@@ -34,6 +34,7 @@ const Article = (props: ArticleProp) => {
             <div className="col-4">
               <div className="article">
                 <div className="title">
+                  <span className="category">{category}</span>
                   <h2 className="no-margin line-64px">{ post.title }</h2>
                 </div>
                 <div className="date">
