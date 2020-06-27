@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import dayjs from 'dayjs'
-import { loadGetInitialProps } from 'next/dist/next-server/lib/utils'
 
 type CardProp = {
   slug: string
   title: string
+  thumbnail?: {
+    url: string
+  }
   category?: string
   createdAt: Date
   updatedAt?: Date
@@ -23,12 +25,14 @@ const ArticleCard: React.FC<CardProp> = props => {
     }
     return classNames.join(' ')
   }
+
   const category: string[] = props.category ? props.category.replace(/\s/g, '').split(',') : ['カテゴリーなし']
+  const imageUrl = props.thumbnail ? props.thumbnail.url : '/images/arz_gray_no_image.png'
 
   return (
     <div className={attachClass()}>
       <Link href="/news/[slug]" as={`/news/${props.slug}`}><a></a></Link>
-      <div className="background-image"></div>
+      <div className="background-image" style={{backgroundImage: `url(${imageUrl})`}}></div>
       <div className="content">
         { category.map(cat => {
           return(<span className="category">{ cat }</span>)

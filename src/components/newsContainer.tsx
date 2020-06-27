@@ -13,6 +13,7 @@ const NewsContainer = (props) => {
                 <ArticleCard
                   slug={p.slug}
                   title={p.title}
+                  thumbnail={p.thumbnail}
                   category={p.category}
                   createdAt={p.createdAt}
                 />

@@ -21,10 +21,6 @@ const Home = (props) => {
     { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
     { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
     { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
     { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' }
   ]
 

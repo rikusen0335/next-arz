@@ -7,6 +7,7 @@ import TwitterEmbed from '~/components/twitterEmbed'
 import { TwitterShareButton, TwitterIcon } from 'react-share'
 import { useEffect, useState } from 'react'
 import { getPost } from '~/pages/api/axios'
+
 type ArticleProp = {
   slug: string
   title: string
