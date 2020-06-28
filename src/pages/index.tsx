@@ -40,7 +40,7 @@ const Home = (props) => {
   return ([
     <Header />,
     <Layout home>
-      <div>
+      <div className="main">
         {sponsers[0] && (
           <section id="sponser">
             <div className="container">
@@ -82,7 +82,9 @@ Home.getInitialProps = async () => {
     post = response.data
   }
 
-  return post
+  const pageProps = { pageTitle: 'Home' }
+
+  return { ...post, ...pageProps }
 }
 
 export default Home

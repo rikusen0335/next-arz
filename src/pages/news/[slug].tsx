@@ -73,8 +73,10 @@ Article.getInitialProps = async (context) => {
     post = response.data.contents[0]
   }
 
-  console.log(post)
-  return post
+  const pageProps = { pageTitle: post.title }
+
+  //console.log(post)
+  return { ...post, ...pageProps }
 }
 
 export default Article

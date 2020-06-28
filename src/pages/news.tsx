@@ -4,6 +4,7 @@ import ArticleCard from "~/components/articleCard"
 import TwitterEmbed from "~/components/twitterEmbed"
 import { getFullNewsList } from "~/pages/api/axios"
 import { useState, useEffect } from "react"
+import JumbotronTitle from "~/components/jumbotronTitle"
 
 const News = props => {
   let newsList = props.contents
@@ -12,6 +13,7 @@ const News = props => {
   return ([
     <Header />,
     <Layout home={false}>
+      <JumbotronTitle title="NEWS" />
       { newsList[0] ? (
         <section>
           <div className="container">
@@ -48,7 +50,9 @@ News.getInitialProps = async () => {
     post = response.data
   }
 
-  return post
+  const pageProps = { pageTitle: 'News' }
+
+  return { ...post, ...pageProps }
 }
 
 export default News
