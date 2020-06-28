@@ -1,4 +1,4 @@
-console.info(`APIKEY is ${process.env.API_KEY}`)
+//console.info(`APIKEY is ${process.env.API_KEY}`)
 
 module.exports = {
   env: {
