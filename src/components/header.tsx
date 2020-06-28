@@ -14,6 +14,9 @@ export default function Header() {
         <li>
           <Link href="/teams"><a>TEAMS</a></Link>
         </li>
+        <li>
+          <Link href="/members"><a>MEDIA</a></Link>
+        </li>
       </ul>
     </header>
   )
