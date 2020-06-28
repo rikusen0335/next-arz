@@ -10,7 +10,11 @@ const Teams = () => {
       <JumbotronTitle title="TEAMS" />
       <section>
         <div className="container">
-          <TeamCard />
+          <div className="grid grid-cols-2 gap-4">
+            <TeamCard />
+            <TeamCard />
+            <TeamCard />
+          </div>
         </div>
       </section>
     </Layout>
