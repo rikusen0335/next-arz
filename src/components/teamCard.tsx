@@ -1,4 +1,3 @@
-import dayjs from "dayjs"
 import Link from "next/link"
 
 type PropType = {
@@ -17,7 +16,7 @@ const TeamCard = (props: PropType) => {
       <Link href="/teams/[slug]" as={`/teams/${props.slug}`}><a></a></Link>
       <div className="background-image" style={{backgroundImage: `url(${imageUrl})`}}></div>
       <div className="content">
-        <h3>{ props.title }</h3>
+        <p>{ props.title }</p>
       </div>
     </div>
   )
