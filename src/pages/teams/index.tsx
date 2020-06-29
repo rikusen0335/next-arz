@@ -15,6 +15,7 @@ const Teams = () => {
       <JumbotronTitle title="TEAMS" />
       <section>
         <div className="container">
+          
           <div className="grid grid-cols-5 gap-6">
             <div className="col-span-4">
               <div className="grid grid-cols-2 gap-4">
