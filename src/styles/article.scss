@@ -17,13 +17,26 @@
     }
 
     h2 {
+      font-size: 36px;
+      font-weight: bold;
       letter-spacing: 0.15rem;
     }
   }
+
   .date p {
     font-size: 1.125rem;
     font-weight: bold;
     margin: 0;
+  }
+
+  .content {
+    .memberTitle {
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 45px;
+      padding: 64px;
+      background: linear-gradient(97.34deg, #CE302D 5.4%, #1F2023 5.4%, #1F2023 22.89%);
+    }
   }
 
   img {

@@ -7,14 +7,14 @@ import dayjs from "dayjs"
 import { TwitterShareButton, TwitterIcon } from "react-share"
 
 const TeamMember = (props: any) => {
-  const data = {
+
+  // const post = props
+  const post = {
     slug: 'apex-legends',
     title: 'Apex Legends部門'
   }
-
-  const post = props
-  const category: string[] = post.category ? post.category.replace(/\s/g, '').split(',') : ['カテゴリーなし']
-  const imageUrl = post.thumbnail ? post.thumbnail.url : '/images/arz_gray_no_image.png'
+  // const imageUrl = post.thumbnail ? post.thumbnail.url : '/images/arz_gray_no_image.png'
+  const imageUrl = '/images/arz_gray_no_image.png'
 
   return ([
     <Header />,
@@ -27,17 +27,14 @@ const TeamMember = (props: any) => {
             <div className="col-span-4">
               <div className="article">
                 <div className="title">
-                  <span className="category">{category}</span>
                   <h2 className="no-margin line-64px">{post.title}</h2>
-                </div>
-                <div className="date">
-                  <p>{dayjs(post.createdAt).format('YYYY.MM.DD')}</p>
                 </div>
                 <img src={imageUrl}></img>
                 <div
                   className="content"
-                  dangerouslySetInnerHTML={{ __html: post.content }}
                 >
+                  <h3 className="memberTitle">MEMBERS</h3>
+
                 </div>
               </div>
             </div>
