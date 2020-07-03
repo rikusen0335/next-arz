@@ -5,6 +5,7 @@ import TeamCard from "~/components/teamCard"
 import TwitterEmbed from "~/components/twitterEmbed"
 import dayjs from "dayjs"
 import { TwitterShareButton, TwitterIcon } from "react-share"
+import { PlayerCard } from "~/components/playerCard"
 
 const TeamMember = (props: any) => {
 
@@ -35,6 +36,12 @@ const TeamMember = (props: any) => {
                 >
                   <h3 className="memberTitle">MEMBERS</h3>
 
+                  <div className="grid grid-cols-3">
+                    <PlayerCard />
+                    <PlayerCard />
+                    <PlayerCard />
+                    <PlayerCard />
+                  </div>
                 </div>
               </div>
             </div>
