@@ -8,7 +8,7 @@ import Link from 'next/link'
 import React from 'react';
 import Swiper from 'react-id-swiper';
 
-import { getNewsList } from "~/pages/api/axios"
+import { getNewsLimited } from "~/lib/axios"
 
 const Home = (props) => {
   const sponsers = [
@@ -75,7 +75,7 @@ const Home = (props) => {
 }
 
 Home.getInitialProps = async () => {
-  const response = await getNewsList()
+  const response = await getNewsLimited()
   let post = null
 
   if (response.status === 200 && response) {

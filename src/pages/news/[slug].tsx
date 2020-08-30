@@ -6,21 +6,10 @@ import dayjs from 'dayjs'
 import TwitterEmbed from '~/components/twitter-embed'
 import { TwitterShareButton, TwitterIcon } from 'react-share'
 import { useEffect, useState } from 'react'
-import { getPost } from '~/pages/api/axios'
+import { getNewsBySlug } from '~/lib/axios'
+import { News } from '~/types/type'
 
-type ArticleProp = {
-  slug: string
-  title: string
-  thumbnail?: {
-    url: string
-  }
-  category?: string
-  createdAt: Date
-  updatedAt?: Date
-  content: string
-}
-
-const Article = (props: ArticleProp) => {
+const Article = (props: News) => {
   const post = props
   const category: string[] = post.category ? post.category.replace(/\s/g, '').split(',') : ['カテゴリーなし']
   const imageUrl = post.thumbnail ? post.thumbnail.url : '/images/arz_gray_no_image.png'
@@ -40,7 +29,7 @@ const Article = (props: ArticleProp) => {
                 <div className="date">
                   <p>{dayjs(post.createdAt).format('YYYY.MM.DD')}</p>
                 </div>
-                <img src={imageUrl}></img>
+                <img className="thumbnail" src={imageUrl}></img>
                 <div
                   className="content"
                   dangerouslySetInnerHTML={{ __html: post.content }}
@@ -66,7 +55,7 @@ const Article = (props: ArticleProp) => {
 
 Article.getInitialProps = async (context) => {
   const { slug } = context.query
-  const response = await getPost(slug)
+  const response = await getNewsBySlug(slug)
   let post = null
 
   if (response.status === 200 && response) {

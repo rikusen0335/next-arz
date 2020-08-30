@@ -25,6 +25,12 @@ body {
   font-size: 16px;
 }
 
+img,
+video {
+  max-width: inheret;
+  height: inheret;
+}
+
 .jumbotron {
   width: 100%;
   height: auto;
@@ -117,7 +123,48 @@ section {
 }
 
 .player-card {
-  .background {
-    background: linear-gradient(107.23deg, #CE302D 57.23%, #A72725 57.23%, #A72725 91.28%);
+  background: linear-gradient(107.23deg, #CE302D 57.22%, #A72725 57.23%, #A72725 91.28%);
+}
+
+.member-introduction {
+  padding: 128px;
+  background: linear-gradient(96.35deg, #A72725 55.9%, #CE302D 55.95%, #CE302D 91.38%);
+}
+
+.share {
+  display: flex;
+  align-items: center;
+
+  height: 200px;
+  padding: 0 128px;
+  background-color: $black-light;
+
+  p {
+    font-size: 32px;
+    font-weight: 200;
+
+    margin-right: 64px;
+  }
+
+  a {
+    width: 48px;
+    height: 48px;
+  }
+
+  img.thumbnail {
+    margin: 0;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+  }
+
+  .react-share__ShareButton {
+    width: 48px;
+    height: 48px;
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }

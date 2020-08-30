@@ -2,8 +2,7 @@ import Layout from "~/components/layout"
 import Header from "~/components/header"
 import ArticleCard from "~/components/article-card"
 import TwitterEmbed from "~/components/twitter-embed"
-import { getFullNewsList } from "~/pages/api/axios"
-import { useState, useEffect } from "react"
+import { getNews } from "~/lib/axios"
 import JumbotronTitle from "~/components/jumbotronTitle"
 
 const News = props => {
@@ -43,7 +42,7 @@ const News = props => {
 }
 
 News.getInitialProps = async () => {
-  const response = await getFullNewsList()
+  const response = await getNews()
   let post = null
 
   if (response.status === 200 && response) {

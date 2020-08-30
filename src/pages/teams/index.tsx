@@ -3,12 +3,13 @@ import Header from "~/components/header"
 import Layout from "~/components/layout"
 import TeamCard from "~/components/team-card"
 import TwitterEmbed from "~/components/twitter-embed"
+import { Team } from "~/types/type"
+import { getTeams } from "~/lib/axios"
 
-const Teams = () => {
-  const data = {
-    slug: 'apex-legends',
-    title: 'Apex Legends部門'
-  }
+const Teams = (props: any) => {
+  const teams: Team[] = props.teams
+  console.log(props)
+
   return ([
     <Header />,
     <Layout home={false}>
@@ -19,9 +20,11 @@ const Teams = () => {
           <div className="grid grid-cols-5 gap-6">
             <div className="col-span-4">
               <div className="grid grid-cols-2 gap-4">
-                <TeamCard {...data} />
-                <TeamCard {...data} />
-                <TeamCard {...data} />
+                {teams &&
+                  teams.map((team) => {
+                    return <TeamCard {...team} />
+                  })
+                }
               </div>
             </div>
             <div className="col-span-1">
@@ -37,7 +40,17 @@ const Teams = () => {
 
 Teams.getInitialProps = async () => {
   const pageProps = { pageTitle: 'Teams' }
-  return pageProps
+
+  const response = await getTeams()
+  let teams = null
+
+  if (response.status === 200 && response) {
+    teams = response.data.contents
+  }
+
+  console.log(teams)
+
+  return { teams: teams, ...pageProps }
 }
 
 export default Teams

@@ -1,6 +1,6 @@
 .article {
   width: 100%;
-  
+
   .title {
     width: 100%;
     border-bottom: 3px solid $primary;
@@ -35,12 +35,13 @@
       font-size: 36px;
       line-height: 45px;
       padding: 64px;
-      background: linear-gradient(97.34deg, #CE302D 5.4%, #1F2023 5.4%, #1F2023 22.89%);
+      background: linear-gradient(97.34deg, #CE302D 5.35%, #1F2023 5.4%, #1F2023 22.89%);
+      margin-bottom: 64px;
     }
   }
 
-  img {
-    margin: 64px 0 32px;
+  img.thumbnail {
+    margin: 64px 0;
     width: 100%;
     height: auto;
   }
