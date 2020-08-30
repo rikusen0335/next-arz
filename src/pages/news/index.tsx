@@ -1,7 +1,7 @@
 import Layout from "~/components/layout"
 import Header from "~/components/header"
-import ArticleCard from "~/components/articleCard"
-import TwitterEmbed from "~/components/twitterEmbed"
+import ArticleCard from "~/components/article-card"
+import TwitterEmbed from "~/components/twitter-embed"
 import { getFullNewsList } from "~/pages/api/axios"
 import { useState, useEffect } from "react"
 import JumbotronTitle from "~/components/jumbotronTitle"
@@ -14,19 +14,19 @@ const News = props => {
     <Header />,
     <Layout home={false}>
       <JumbotronTitle title="NEWS" />
-      { newsList[0] ? (
+      {newsList[0] ? (
         <section>
           <div className="container">
             <div className="row">
-              <div className="col-4 justify-center">
+              <div className="justify-center col-4">
                 <div className="row">
-                  { newsList.map((data, index) => {
+                  {newsList.map((data, index) => {
                     return (
                       <div className="col" key={index}>
                         <ArticleCard {...data} />
                       </div>
                     )
-                  }) }
+                  })}
                 </div>
               </div>
               <div className="col-1">
@@ -36,8 +36,8 @@ const News = props => {
           </div>
         </section>
       ) : (
-        <h3>記事が見つかりませんでした。</h3>
-      )}
+          <h3>記事が見つかりませんでした。</h3>
+        )}
     </Layout>
   ])
 }

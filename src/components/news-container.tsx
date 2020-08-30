@@ -1,4 +1,4 @@
-import ArticleCard from "./articleCard"
+import ArticleCard from "./article-card"
 
 const NewsContainer = (props) => {
   const posts = props.post.contents

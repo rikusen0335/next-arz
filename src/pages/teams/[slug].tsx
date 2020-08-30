@@ -1,11 +1,11 @@
 import Header from "~/components/header"
 import Layout from "~/components/layout"
 import JumbotronTitle from "~/components/jumbotronTitle"
-import TeamCard from "~/components/teamCard"
-import TwitterEmbed from "~/components/twitterEmbed"
+import TeamCard from "~/components/team-card"
+import TwitterEmbed from "~/components/twitter-embed"
 import dayjs from "dayjs"
 import { TwitterShareButton, TwitterIcon } from "react-share"
-import { PlayerCard } from "~/components/playerCard"
+import { PlayerCard } from "~/components/player-card"
 
 const TeamMember = (props: any) => {
 

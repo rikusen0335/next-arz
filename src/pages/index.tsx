@@ -1,8 +1,8 @@
 import Header from '~/components/header'
 import Layout from '~/components/layout'
 import Sponser from '~/components/sponser'
-import IndexTitle from '~/components/indexTitle'
-import NewsContainer from '~/components/newsContainer'
+import IndexTitle from '~/components/index-title'
+import NewsContainer from '~/components/news-container'
 import Link from 'next/link'
 
 import React from 'react';
@@ -47,13 +47,13 @@ const Home = (props) => {
               <IndexTitle title="SPONSERS" />
 
               <Swiper {...swiperParams}>
-                { sponsers.map((data) => {
+                {sponsers.map((data) => {
                   return (
                     <div>
                       <Sponser {...data} />
                     </div>
                   )
-                }) }
+                })}
               </Swiper>
             </div>
           </section>

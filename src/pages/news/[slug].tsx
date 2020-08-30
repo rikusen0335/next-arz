@@ -3,7 +3,7 @@ import Layout from '~/components/layout'
 
 import { useRouter } from 'next/router'
 import dayjs from 'dayjs'
-import TwitterEmbed from '~/components/twitterEmbed'
+import TwitterEmbed from '~/components/twitter-embed'
 import { TwitterShareButton, TwitterIcon } from 'react-share'
 import { useEffect, useState } from 'react'
 import { getPost } from '~/pages/api/axios'
@@ -35,10 +35,10 @@ const Article = (props: ArticleProp) => {
               <div className="article">
                 <div className="title">
                   <span className="category">{category}</span>
-                  <h2 className="no-margin line-64px">{ post.title }</h2>
+                  <h2 className="no-margin line-64px">{post.title}</h2>
                 </div>
                 <div className="date">
-                  <p>{ dayjs(post.createdAt).format('YYYY.MM.DD') }</p>
+                  <p>{dayjs(post.createdAt).format('YYYY.MM.DD')}</p>
                 </div>
                 <img src={imageUrl}></img>
                 <div

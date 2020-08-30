@@ -1,8 +1,8 @@
 import JumbotronTitle from "~/components/jumbotronTitle"
 import Header from "~/components/header"
 import Layout from "~/components/layout"
-import TeamCard from "~/components/teamCard"
-import TwitterEmbed from "~/components/twitterEmbed"
+import TeamCard from "~/components/team-card"
+import TwitterEmbed from "~/components/twitter-embed"
 
 const Teams = () => {
   const data = {
@@ -15,7 +15,7 @@ const Teams = () => {
       <JumbotronTitle title="TEAMS" />
       <section>
         <div className="container">
-          
+
           <div className="grid grid-cols-5 gap-6">
             <div className="col-span-4">
               <div className="grid grid-cols-2 gap-4">
@@ -28,7 +28,7 @@ const Teams = () => {
               <TwitterEmbed />
             </div>
           </div>
-          
+
         </div>
       </section>
     </Layout>
