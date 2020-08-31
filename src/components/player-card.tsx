@@ -23,7 +23,7 @@ export const PlayerCard = (props: Member) => {
   const ProfileAvatar = () => {
     return (
       <img
-        className="object-contain"
+        className="object-cover"
         src={getMemberAvatar(member)}
         style={style}
       />

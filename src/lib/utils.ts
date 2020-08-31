@@ -1,6 +1,6 @@
 import { Member, Team } from "~/types/type";
 
-const noAvatar = "/images/arz_logo_transparent_white.png"; // Why I can't use this shit?
+const noAvatar = "/images/arz_logo.png"; // Why I can't use this shit?
 const noImage = "/images/arz_gray_no_image.png";
 
 export const getMemberAvatar = (member: Member): string => {
