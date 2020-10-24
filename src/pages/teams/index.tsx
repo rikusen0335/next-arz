@@ -8,13 +8,12 @@ import { getTeams } from "~/lib/axios"
 
 const Teams = (props: any) => {
   const teams: Team[] = props.teams
-  console.log(props)
 
   return ([
     <Header />,
     <Layout home={false}>
       <JumbotronTitle title="TEAMS" />
-      <section>
+      <div className="wrapper">
         <div className="container">
 
           <div className="grid grid-cols-5 gap-6">
@@ -33,7 +32,7 @@ const Teams = (props: any) => {
           </div>
 
         </div>
-      </section>
+      </div>
     </Layout>
   ])
 }
@@ -48,7 +47,7 @@ Teams.getInitialProps = async () => {
     teams = response.data.contents
   }
 
-  console.log(teams)
+  // console.log(teams)
 
   return { teams: teams, ...pageProps }
 }

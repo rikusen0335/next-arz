@@ -17,7 +17,7 @@ const Article = (props: News) => {
   return ([
     <Header />,
     <Layout home={false}>
-      <section>
+      <div className="wrapper">
         <div className="container">
           <div className="row">
             <div className="col-4">
@@ -48,7 +48,7 @@ const Article = (props: News) => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </Layout>
   ])
 }

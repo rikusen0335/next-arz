@@ -5,16 +5,15 @@ import TwitterEmbed from "~/components/twitter-embed"
 import { getNews } from "~/lib/axios"
 import JumbotronTitle from "~/components/jumbotronTitle"
 
-const News = props => {
+const News = (props: { contents: any }) => {
   let newsList = props.contents
-  console.log(newsList)
 
   return ([
     <Header />,
     <Layout home={false}>
       <JumbotronTitle title="NEWS" />
       {newsList[0] ? (
-        <section>
+        <div className="wrapper">
           <div className="container">
             <div className="row">
               <div className="justify-center col-4">
@@ -33,7 +32,7 @@ const News = props => {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       ) : (
           <h3>記事が見つかりませんでした。</h3>
         )}

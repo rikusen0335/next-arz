@@ -17,23 +17,13 @@ const TeamMember = (props: Member) => {
       <Header />
       <Layout home={false}>
         <JumbotronTitle title="TEAMS" />
-        <section>
+        <div className="wrapper">
           <div className="container">
 
             <div className="grid grid-cols-5 gap-6">
               <div className="col-span-4">
-                <div className="flex items-center w-full mb-16 member-introduction">
-                  <div className="mr-8">
-                    <img
-                      className="object-scale-down rounded-full"
-                      src={getMemberAvatar(member)}
-                      style={{
-                        width: 256,
-                        height: 256
-                      }}
-                    />
-                  </div>
-                  <div className="flex-row">
+                <div className="flex items-center w-full mx-auto mb-16 member-introduction">
+                  <div className="flex-row mx-auto">
                     <p className="mb-3 text-2xl font-bold">{member.team.name}</p>
                     <p
                       className="px-3 mb-4 text-4xl font-bold"
@@ -48,27 +38,38 @@ const TeamMember = (props: Member) => {
                           <img className="w-12 mx-2" src="/images/twitter.png" />
                         </a>
                       }
-                      {member.stream_at &&
-                        <a href={member.stream_at}>
+                      {member.twitch_id &&
+                        <a href={'https://twitch.tv/' + member.twitch_id}>
                           <img className="w-12 mx-2" src="/images/twitch.png" />
+                        </a>
+                      }
+                      {member.youtube_url &&
+                        <a href={member.youtube_url}>
+                          <img className="w-12 mx-2" src="/images/youtube.png" />
                         </a>
                       }
                     </p>
                   </div>
                 </div>
 
-                <IntroductionSelection
-                  title="Introduction"
-                  description={member.description}
-                />
-                <IntroductionSelection
-                  title="Comment"
-                  description={member.comment}
-                />
-                <IntroductionSelection
-                  title="Detail"
-                  description={member.favorite_character}
-                />
+                {member.introduction && (
+                  <IntroductionSelection
+                    title="Introduction"
+                    description={member.introduction}
+                  />
+                )}
+                {member.comment && (
+                  <IntroductionSelection
+                    title="Comment"
+                    description={member.comment}
+                  />
+                )}
+                {member.description && (
+                  <IntroductionSelection
+                    title="Detail"
+                    description={member.description}
+                  />
+                )}
 
                 <div className="mt-16 share">
                   <p>SHARE</p>
@@ -84,7 +85,7 @@ const TeamMember = (props: Member) => {
             </div>
 
           </div>
-        </section>
+        </div>
       </Layout>
     </div>
   )

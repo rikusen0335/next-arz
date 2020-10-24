@@ -12,16 +12,6 @@ import { getNewsLimited } from "~/lib/axios"
 
 const Home = (props) => {
   const sponsers = [
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' },
-    { website: 'https://devmia.net', logo: '/images/satonoya_elf_touka.png' }
   ]
 
   const swiperParams = {
@@ -42,7 +32,7 @@ const Home = (props) => {
     <Layout home>
       <div className="main">
         {sponsers[0] && (
-          <section id="sponser">
+          <div className="wrapper" id="sponser">
             <div className="container">
               <IndexTitle title="SPONSERS" />
 
@@ -56,10 +46,10 @@ const Home = (props) => {
                 })}
               </Swiper>
             </div>
-          </section>
+          </div>
         )}
 
-        <section id="news">
+        <div className="wrapper" id="news">
           <div className="container">
             <IndexTitle title="NEWS" />
             <NewsContainer post={props} />
@@ -67,7 +57,7 @@ const Home = (props) => {
               <Link href="/news"><a>READ MORE</a></Link>
             </div>
           </div>
-        </section>
+        </div>
 
       </div>
     </Layout>

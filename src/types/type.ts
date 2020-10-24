@@ -36,8 +36,19 @@ export type Member = {
   work_lane?: string;
   favorite_game?: string;
   main_stream_game?: string;
+  introduction?: string;
   description?: string;
   comment?: string;
   twitter_id?: string;
-  stream_at?: string;
+  twitch_id?: string;
+  youtube_url?: string;
+};
+
+export type HistoryType = {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+  date: Date;
+  event: string;
+  participation: string;
 };

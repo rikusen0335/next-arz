@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const url = 'https://rikusen-test.microcms.io/api/v1/'
+const url = process.env.API_URL
 const apiKey = process.env.API_KEY
 
 /*
  * News
  */
 
-const news = 'blog'
+const news = 'news'
 
 export const getNewsLimited = async () => {
   const response = await axios.get(url + news, {
@@ -20,11 +20,12 @@ export const getNewsLimited = async () => {
   return response
 }
 
+// TODO: そのうちページネーションを作るとかように改造しないと
 export const getNews = async () => {
   const response = await axios.get(url + news, {
     headers: { "X-API-KEY": apiKey },
     params: {
-      limit: 10
+      limit: 99
     }
   })
 
@@ -53,7 +54,7 @@ export const getTeams = async () => {
   const response = await axios.get(url + teams, {
     headers: { "X-API-KEY": apiKey },
     params: {
-      limit: 10
+      limit: 99
     }
   })
 
@@ -82,7 +83,7 @@ export const getMembers = async () => {
   const response = await axios.get(url + members, {
     headers: { "X-API-KEY": apiKey },
     params: {
-      limit: 10
+      limit: 99
     }
   })
 
@@ -107,6 +108,25 @@ export const getMemberByName = async (slug: string) => {
     headers: { "X-API-KEY": apiKey },
     params: {
       filters: `player_name[equals]${slug}`
+    }
+  })
+
+  return response
+}
+
+
+/*
+ * History
+ */
+
+const history = 'history'
+
+export const getHistories = async () => {
+  const response = await axios.get(url + history, {
+    headers: { "X-API-KEY": apiKey },
+    params: {
+      limit: 99,
+      orders: 'date'
     }
   })
 

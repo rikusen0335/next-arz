@@ -18,7 +18,7 @@ const TeamMemberList = (props: any) => {
     <Header />,
     <Layout home={false}>
       <JumbotronTitle title="TEAMS" />
-      <section>
+      <div className="wrapper">
         <div className="container">
 
           <div className="grid grid-cols-5 gap-6">
@@ -49,7 +49,7 @@ const TeamMemberList = (props: any) => {
           </div>
 
         </div>
-      </section>
+      </div>
     </Layout>
   ])
 }

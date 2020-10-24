@@ -31,6 +31,18 @@ video {
   height: inheret;
 }
 
+.color-primary {
+  color: $primary;
+}
+
+.bottom-divider {
+  border-bottom: 3px solid $black;
+}
+
+.border-section {
+  border-left: 4px solid $primary;
+}
+
 .jumbotron {
   width: 100%;
   height: auto;
@@ -61,7 +73,7 @@ video {
   margin: 0 auto;
 }
 
-section {
+.wrapper {
   padding: 4rem 0;
 
   .main & {

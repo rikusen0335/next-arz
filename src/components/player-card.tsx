@@ -32,7 +32,7 @@ export const PlayerCard = (props: Member) => {
 
   return (
     <Link href="/members/[player_name]" as={`/members/${member.player_name}`}>
-      <div id="card" className="relative w-full h-full cursor-pointer player-card">
+      <div id="card" className="relative w-full h-full cursor-pointer group player-card">
         <ProfileAvatar />
         <div
           className="absolute bottom-0 flex items-center justify-between w-full px-5 py-4"
@@ -40,6 +40,7 @@ export const PlayerCard = (props: Member) => {
         >
           <span className="text-xl font-bold text-white">{member.nick_name}</span>
           <Icon
+            className="transition-transform duration-300 ease-in-out transform group-hover:translate-x-1"
             path={mdiChevronRight}
             size={1}
             color="white"
