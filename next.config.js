@@ -17,6 +17,7 @@ module.exports = {
       '/teams':   { page: '/teams' },
       '/about':   { page: '/about' },
       '/history': { page: '/history' },
+      '/sponsor': { page: '/sponsor' },
     };
 
     const news = async () => {

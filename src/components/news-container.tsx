@@ -9,7 +9,7 @@ const NewsContainer = (props) => {
         {
           posts.map((p, index) => {
             return (
-              <div className={'a' + (index + 1)}>
+              <div key={index} className={'a' + (index + 1)}>
                 <ArticleCard
                   slug={p.slug}
                   title={p.title}

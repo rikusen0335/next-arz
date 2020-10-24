@@ -28,8 +28,8 @@ const Home = (props) => {
   }
 
   return ([
-    <Header />,
-    <Layout home>
+    <Header key={0} />,
+    <Layout key={1} home>
       <div className="main">
         {sponsers[0] && (
           <div className="wrapper" id="sponser">
@@ -37,9 +37,9 @@ const Home = (props) => {
               <IndexTitle title="SPONSERS" />
 
               <Swiper {...swiperParams}>
-                {sponsers.map((data) => {
+                {sponsers.map((data, index) => {
                   return (
-                    <div>
+                    <div key={index}>
                       <Sponser {...data} />
                     </div>
                   )

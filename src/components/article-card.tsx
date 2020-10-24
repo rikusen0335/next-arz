@@ -32,13 +32,13 @@ const ArticleCard: React.FC<CardProp> = props => {
   return (
     <div className={attachClass()}>
       <Link href="/news/[slug]" as={`/news/${props.slug}`}><a></a></Link>
-      <div className="background-image" style={{backgroundImage: `url(${imageUrl})`}}></div>
+      <div className="background-image" style={{ backgroundImage: `url(${imageUrl})` }}></div>
       <div className="content">
-        { category.map(cat => {
-          return(<span className="category">{ cat }</span>)
+        {category.map((cat, index) => {
+          return (<span key={index} className="category">{cat}</span>)
         })}
-        <h3>{ props.title }</h3>
-        <small className="date">{ dayjs(props.createdAt).format('YYYY.MM.DD') }</small>
+        <h3>{props.title}</h3>
+        <small className="date">{dayjs(props.createdAt).format('YYYY.MM.DD')}</small>
       </div>
     </div>
   )
