@@ -35,7 +35,9 @@
     letter-spacing: 0.05em;
     transition: .5s;
 
-    &:hover { opacity: 60%; }
+    &:hover {
+      opacity: 0.50;
+    }
 
     &:before {
       content: '';
