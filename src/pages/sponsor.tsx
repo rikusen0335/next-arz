@@ -4,7 +4,7 @@ import Layout from '~/components/layout'
 import TwitterEmbed from '~/components/twitter-embed'
 import { TwitterShareButton, TwitterIcon } from 'react-share'
 
-const About = () => {
+const Sponsor = () => {
   return ([
     <Header />,
     <Layout>
@@ -47,4 +47,10 @@ const About = () => {
   ])
 }
 
-export default About
+Sponsor.getInitialProps = async () => {
+  const pageProps = { pageTitle: 'Sponsor' }
+
+  return { ...pageProps }
+}
+
+export default Sponsor;
