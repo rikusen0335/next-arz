@@ -52,4 +52,10 @@ const About = () => {
   ])
 }
 
+About.getInitialProps = async () => {
+  const pageProps = { pageTitle: 'About' }
+
+  return { ...pageProps }
+}
+
 export default About
