@@ -8,9 +8,14 @@ import { getMemberByName } from "~/lib/axios"
 
 import { Member } from '~/types/type'
 import { getMemberAvatar } from "~/lib/utils"
+import dayjs from "dayjs"
 
 const TeamMember = (props: Member) => {
   const member = props
+
+  const birthday: string = new Date(member.birthday).getFullYear() === 1500
+    ? dayjs(member.birthday).format('MM.DD') // 1500 year
+    : dayjs(member.birthday).format('YYYY.MM.DD') // or not
 
   return (
     <div>
@@ -26,11 +31,17 @@ const TeamMember = (props: Member) => {
                   <div className="flex-row mx-auto">
                     <p className="mb-3 text-2xl font-bold">{member.team.name}</p>
                     <p
-                      className="px-3 mb-4 text-4xl font-bold"
+                      className="px-3 text-4xl font-bold"
                       style={{ backgroundColor: '#1F2023' }}
                     >
                       {member.player_name}
                       <span className="text-2xl">&nbsp;({member.nick_name})</span>
+                    </p>
+                    <p
+                      className="mb-4 ml-2 font-bold"
+                      style={{ color: '#1F2023' }}
+                    >
+                      <span className="mr-1 text-xs">BIRTHDAY</span><span className="text-lg">{birthday}</span>
                     </p>
                     <p className="flex items-center mb-3">
                       {member.twitter_id &&

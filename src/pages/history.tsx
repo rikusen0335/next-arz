@@ -5,7 +5,7 @@ import TwitterEmbed from '~/components/twitter-embed'
 import { TwitterShareButton, TwitterIcon } from 'react-share'
 import dayjs from 'dayjs'
 import { getHistories } from '~/lib/axios'
-import { HistoryType } from '~/types/type'
+import { History as HistoryType } from '~/types/type'
 
 const History = ({ contents }) => {
   return ([
@@ -25,7 +25,7 @@ const History = ({ contents }) => {
                   <ul>
                     {contents.map((data: HistoryType, index: number) => {
                       return (
-                        <li className="p-2 my-8 ml-4 border-section">
+                        <li key={index} className="p-2 my-8 ml-4 border-section">
                           <p className="ml-4">
                             <span className="text-xl">{data.event}</span>
                           </p>

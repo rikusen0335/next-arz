@@ -32,10 +32,7 @@ export type Member = {
   player_name: string;
   nick_name: string;
   team: Team;
-  favorite_character?: string;
-  work_lane?: string;
-  favorite_game?: string;
-  main_stream_game?: string;
+  birthday: Date;
   introduction?: string;
   description?: string;
   comment?: string;
@@ -44,7 +41,7 @@ export type Member = {
   youtube_url?: string;
 };
 
-export type HistoryType = {
+export type History = {
   id: string;
   createdAt: Date;
   updatedAt: Date;
