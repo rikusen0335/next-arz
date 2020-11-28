@@ -9,7 +9,7 @@ const TeamCard = (props: Team) => {
   return (
     <Link href="/teams/[slug]" as={`/teams/${team.slug}`}><a>
       <div className="teamCard">
-        <Image className="background-image" src={imageUrl} layout="fill" objectFit="cover" />
+        <img className="background-image" src={imageUrl} />
         <div className="content">
           <p className="name">{team.name}</p>
         </div>
