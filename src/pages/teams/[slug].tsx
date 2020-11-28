@@ -1,10 +1,7 @@
-import Header from "~/components/header"
+
 import Layout from "~/components/layout"
 import JumbotronTitle from "~/components/jumbotronTitle"
-import TeamCard from "~/components/team-card"
 import TwitterEmbed from "~/components/twitter-embed"
-import dayjs from "dayjs"
-import { TwitterShareButton, TwitterIcon } from "react-share"
 import { PlayerCard } from "~/components/player-card"
 import { Team, Member } from "~/types/type"
 import { getTeamBySlug, getMemberByTeamID } from "~/lib/axios"
@@ -14,9 +11,8 @@ const TeamMemberList = (props: any) => {
   const team: Team = props.team
   const members: Member[] = props.members
 
-  return ([
-    <Header />,
-    <Layout home={false}>
+  return (
+    <Layout>
       <JumbotronTitle title="TEAMS" />
       <div className="wrapper">
         <div className="container">
@@ -35,8 +31,8 @@ const TeamMemberList = (props: any) => {
 
                   <div className="grid grid-cols-3">
                     {members &&
-                      members.map((member) => {
-                        return <PlayerCard {...member} />
+                      members.map((member, index) => {
+                        return <PlayerCard key={index} {...member} />
                       })
                     }
                   </div>
@@ -51,7 +47,7 @@ const TeamMemberList = (props: any) => {
         </div>
       </div>
     </Layout>
-  ])
+  )
 }
 
 TeamMemberList.getInitialProps = async (context) => {

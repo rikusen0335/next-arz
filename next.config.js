@@ -10,12 +10,16 @@ module.exports = {
     SITE_DESC: process.env.SITE_DESC,
   },
 
-  exportPathMap: async function() {
+  images: {
+    domains: ['images.microcms-assets.io'],
+  },
+
+  exportPathMap: async function () {
     const paths = {
-      '/':        { page: '/' },
-      '/news':    { page: '/news' },
-      '/teams':   { page: '/teams' },
-      '/about':   { page: '/about' },
+      '/': { page: '/' },
+      '/news': { page: '/news' },
+      '/teams': { page: '/teams' },
+      '/about': { page: '/about' },
       '/history': { page: '/history' },
       '/sponsor': { page: '/sponsor' },
     };

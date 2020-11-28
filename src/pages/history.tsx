@@ -1,4 +1,3 @@
-import Header from '~/components/header'
 import Layout from '~/components/layout'
 
 import TwitterEmbed from '~/components/twitter-embed'
@@ -8,8 +7,7 @@ import { getHistories } from '~/lib/axios'
 import { History as HistoryType } from '~/types/type'
 
 const History = ({ contents }) => {
-  return ([
-    <Header />,
+  return (
     <Layout>
       <div className="wrapper">
         <div className="container">
@@ -55,7 +53,7 @@ const History = ({ contents }) => {
         </div>
       </div>
     </Layout >
-  ])
+  )
 }
 
 History.getInitialProps = async () => {

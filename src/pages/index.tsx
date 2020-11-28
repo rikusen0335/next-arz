@@ -1,4 +1,3 @@
-import Header from '~/components/header'
 import Layout from '~/components/layout'
 import Sponser from '~/components/sponser'
 import IndexTitle from '~/components/index-title'
@@ -27,9 +26,8 @@ const Home = (props) => {
     }
   }
 
-  return ([
-    <Header key={0} />,
-    <Layout key={1} home>
+  return (
+    <Layout home>
       <div className="main">
         {sponsers[0] && (
           <div className="wrapper" id="sponser">
@@ -52,16 +50,23 @@ const Home = (props) => {
         <div className="wrapper" id="news">
           <div className="container">
             <IndexTitle title="NEWS" />
-            <NewsContainer post={props} />
-            <div className="readMore">
-              <Link href="/news"><a>READ MORE</a></Link>
-            </div>
+
+            {props.contents[0] ? (
+              <NewsContainer post={props} />
+            ) : (
+                <h3>まだ記事は投稿されていません。</h3>
+              )}
+            {props.contents.length > 6 && (
+              <div className="readMore">
+                <Link href="/news"><a>READ MORE</a></Link>
+              </div>
+            )}
           </div>
         </div>
 
       </div>
     </Layout>
-  ])
+  )
 }
 
 Home.getInitialProps = async () => {

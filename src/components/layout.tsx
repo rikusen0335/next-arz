@@ -1,17 +1,20 @@
-
+import Header from "./header";
 
 export default function Layout({
   children,
   home = false
 }) {
   return (
-    <div>
-      {home ? (
-        <img className="jumbotron" src="/images/arz_header.jpg"></img>
-      ) : (
-          <></>
-        )}
-      {children}
-    </div>
+    <>
+      <Header />
+      <div>
+        {home ? (
+          <img className="jumbotron" src="/images/arz_header.jpg"></img>
+        ) : (
+            <></>
+          )}
+        {children}
+      </div>
+    </>
   )
 }

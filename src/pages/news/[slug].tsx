@@ -1,11 +1,9 @@
 import Header from '~/components/header'
 import Layout from '~/components/layout'
 
-import { useRouter } from 'next/router'
 import dayjs from 'dayjs'
 import TwitterEmbed from '~/components/twitter-embed'
 import { TwitterShareButton, TwitterIcon } from 'react-share'
-import { useEffect, useState } from 'react'
 import { getNewsBySlug } from '~/lib/axios'
 import { News } from '~/types/type'
 
@@ -14,9 +12,8 @@ const Article = (props: News) => {
   const category: string[] = post.category ? post.category.replace(/\s/g, '').split(',') : ['カテゴリーなし']
   const imageUrl = post.thumbnail ? post.thumbnail.url : '/images/arz_gray_no_image.png'
 
-  return ([
-    <Header />,
-    <Layout home={false}>
+  return (
+    <Layout>
       <div className="wrapper">
         <div className="container">
           <div className="row">
@@ -50,7 +47,7 @@ const Article = (props: News) => {
         </div>
       </div>
     </Layout>
-  ])
+  )
 }
 
 Article.getInitialProps = async (context) => {

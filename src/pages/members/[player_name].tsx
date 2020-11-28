@@ -20,7 +20,7 @@ const TeamMember = (props: Member) => {
   return (
     <div>
       <Header />
-      <Layout home={false}>
+      <Layout>
         <JumbotronTitle title="TEAMS" />
         <div className="wrapper">
           <div className="container">

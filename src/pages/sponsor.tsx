@@ -1,12 +1,10 @@
-import Header from '~/components/header'
 import Layout from '~/components/layout'
 
 import TwitterEmbed from '~/components/twitter-embed'
 import { TwitterShareButton, TwitterIcon } from 'react-share'
 
 const Sponsor = () => {
-  return ([
-    <Header />,
+  return (
     <Layout>
       <div className="wrapper">
         <div className="container">
@@ -44,7 +42,7 @@ const Sponsor = () => {
         </div>
       </div>
     </Layout>
-  ])
+  )
 }
 
 Sponsor.getInitialProps = async () => {

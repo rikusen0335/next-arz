@@ -1,5 +1,4 @@
 import JumbotronTitle from "~/components/jumbotronTitle"
-import Header from "~/components/header"
 import Layout from "~/components/layout"
 import TeamCard from "~/components/team-card"
 import TwitterEmbed from "~/components/twitter-embed"
@@ -9,9 +8,8 @@ import { getTeams } from "~/lib/axios"
 const Teams = (props: any) => {
   const teams: Team[] = props.teams
 
-  return ([
-    <Header />,
-    <Layout home={false}>
+  return (
+    <Layout>
       <JumbotronTitle title="TEAMS" />
       <div className="wrapper">
         <div className="container">
@@ -20,8 +18,8 @@ const Teams = (props: any) => {
             <div className="col-span-4">
               <div className="grid grid-cols-2 gap-4">
                 {teams &&
-                  teams.map((team) => {
-                    return <TeamCard {...team} />
+                  teams.map((team, index) => {
+                    return <TeamCard key={index} {...team} />
                   })
                 }
               </div>
@@ -34,7 +32,7 @@ const Teams = (props: any) => {
         </div>
       </div>
     </Layout>
-  ])
+  )
 }
 
 Teams.getInitialProps = async () => {
