@@ -1,4 +1,3 @@
-import Header from "~/components/header"
 import Layout from "~/components/layout"
 import JumbotronTitle from "~/components/jumbotronTitle"
 import TwitterEmbed from "~/components/twitter-embed"
@@ -18,87 +17,84 @@ const TeamMember = (props: Member) => {
     : dayjs(member.birthday).format('YYYY.MM.DD') // or not
 
   return (
-    <div>
-      <Header />
-      <Layout>
-        <JumbotronTitle title="TEAMS" />
-        <div className="wrapper">
-          <div className="container">
+    <Layout>
+      <JumbotronTitle title="TEAMS" />
+      <div className="wrapper">
+        <div className="container">
 
-            <div className="grid grid-cols-5 gap-6">
-              <div className="col-span-4">
-                <div className="flex items-center w-full mx-auto mb-16 member-introduction">
-                  <div className="flex-row mx-auto">
-                    <p className="mb-3 text-2xl font-bold">{member.team.name}</p>
-                    <p
-                      className="px-3 text-4xl font-bold"
-                      style={{ backgroundColor: '#1F2023' }}
-                    >
-                      {member.player_name}
-                      <span className="text-2xl">&nbsp;({member.nick_name})</span>
-                    </p>
-                    <p
-                      className="mb-4 ml-2 font-bold"
-                      style={{ color: '#1F2023' }}
-                    >
-                      <span className="mr-1 text-xs">BIRTHDAY</span><span className="text-lg">{birthday}</span>
-                    </p>
-                    <p className="flex items-center mb-3">
-                      {member.twitter_id &&
-                        <a href={'https://twitter.com/' + member.twitter_id}>
-                          <img className="w-12 mx-2" src="/images/twitter.png" />
-                        </a>
-                      }
-                      {member.twitch_id &&
-                        <a href={'https://twitch.tv/' + member.twitch_id}>
-                          <img className="w-12 mx-2" src="/images/twitch.png" />
-                        </a>
-                      }
-                      {member.youtube_url &&
-                        <a href={member.youtube_url}>
-                          <img className="w-12 mx-2" src="/images/youtube.png" />
-                        </a>
-                      }
-                    </p>
-                  </div>
-                </div>
-
-                {member.introduction && (
-                  <IntroductionSelection
-                    title="Introduction"
-                    description={member.introduction}
-                  />
-                )}
-                {member.comment && (
-                  <IntroductionSelection
-                    title="Comment"
-                    description={member.comment}
-                  />
-                )}
-                {member.description && (
-                  <IntroductionSelection
-                    title="Detail"
-                    description={member.description}
-                  />
-                )}
-
-                <div className="mt-16 share">
-                  <p>SHARE</p>
-                  <TwitterShareButton title={member.nick_name} url={'https://awakerapidzero.com/members/' + member.player_name} related={['@ARZ_TEAM']}>
-                    <TwitterIcon size={48} round={true} />
-                  </TwitterShareButton>
+          <div className="grid grid-cols-5 gap-6">
+            <div className="col-span-4">
+              <div className="flex items-center w-full mx-auto mb-16 member-introduction">
+                <div className="flex-row mx-auto">
+                  <p className="mb-3 text-2xl font-bold">{member.team.name}</p>
+                  <p
+                    className="px-3 text-4xl font-bold"
+                    style={{ backgroundColor: '#1F2023' }}
+                  >
+                    {member.player_name}
+                    <span className="text-2xl">&nbsp;({member.nick_name})</span>
+                  </p>
+                  <p
+                    className="mb-4 ml-2 font-bold"
+                    style={{ color: '#1F2023' }}
+                  >
+                    <span className="mr-1 text-xs">BIRTHDAY</span><span className="text-lg">{birthday}</span>
+                  </p>
+                  <p className="flex items-center mb-3">
+                    {member.twitter_id &&
+                      <a href={'https://twitter.com/' + member.twitter_id}>
+                        <img className="w-12 mx-2" src="/images/twitter.png" />
+                      </a>
+                    }
+                    {member.twitch_id &&
+                      <a href={'https://twitch.tv/' + member.twitch_id}>
+                        <img className="w-12 mx-2" src="/images/twitch.png" />
+                      </a>
+                    }
+                    {member.youtube_url &&
+                      <a href={member.youtube_url}>
+                        <img className="w-12 mx-2" src="/images/youtube.png" />
+                      </a>
+                    }
+                  </p>
                 </div>
               </div>
 
-              <div className="col-span-1">
-                <TwitterEmbed />
+              {member.introduction && (
+                <IntroductionSelection
+                  title="Introduction"
+                  description={member.introduction}
+                />
+              )}
+              {member.comment && (
+                <IntroductionSelection
+                  title="Comment"
+                  description={member.comment}
+                />
+              )}
+              {member.description && (
+                <IntroductionSelection
+                  title="Detail"
+                  description={member.description}
+                />
+              )}
+
+              <div className="mt-16 share">
+                <p>SHARE</p>
+                <TwitterShareButton title={member.nick_name} url={'https://awakerapidzero.com/members/' + member.player_name} related={['@ARZ_TEAM']}>
+                  <TwitterIcon size={48} round={true} />
+                </TwitterShareButton>
               </div>
             </div>
 
+            <div className="col-span-1">
+              <TwitterEmbed />
+            </div>
           </div>
+
         </div>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   )
 }
 
