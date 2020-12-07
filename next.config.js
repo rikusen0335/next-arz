@@ -2,6 +2,8 @@
 const axios = require('axios');
 
 module.exports = {
+  trailingSlash: true,
+
   env: {
     API_KEY: process.env.API_KEY,
     API_URL: process.env.API_URL,
@@ -24,15 +26,15 @@ module.exports = {
       '/sponsor': { page: '/sponsor' },
     };
 
-    const news = async () => {
-      const response = await axios.get(process.env.API_URL + 'news', {
-        headers: { "X-API-KEY": process.env.API_KEY },
-        params: {
-          limit: 99
-        }
-      })
-      return response.data.contents
-    };
+    // const news = async () => {
+    //   const response = await axios.get(process.env.API_URL + 'news', {
+    //     headers: { "X-API-KEY": process.env.API_KEY },
+    //     params: {
+    //       limit: 99
+    //     }
+    //   })
+    //   return response.data.contents
+    // };
 
     const teams = async () => {
       const response = await axios.get(process.env.API_URL + 'team', {
@@ -54,12 +56,12 @@ module.exports = {
       return response.data.contents
     };
 
-    await news()
-      .then(item => {
-        item.map(post => {
-          paths[`/news/${post.slug}`] = { page: '/news/[slug]', query: { slug: post.slug } }
-        });
-      })
+    // await news()
+    //   .then(item => {
+    //     item.map(post => {
+    //       paths[`/news/${post.slug}`] = { page: '/news/[slug]', query: { slug: post.slug } }
+    //     });
+    //   })
 
     await teams()
       .then(item => {

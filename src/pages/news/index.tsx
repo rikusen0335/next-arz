@@ -3,6 +3,7 @@ import ArticleCard from "~/components/article-card"
 import TwitterEmbed from "~/components/twitter-embed"
 import { getNews } from "~/lib/axios"
 import JumbotronTitle from "~/components/jumbotronTitle"
+import { GetStaticPaths } from "next"
 
 const News = (props: { contents: any }) => {
   let newsList = props.contents
